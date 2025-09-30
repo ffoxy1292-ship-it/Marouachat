@@ -1,4 +1,4 @@
-// ====================== قاعدة البيانات المتقدمة ======================
+
 
 const responses = {
 
@@ -785,7 +785,7 @@ const responses = {
 
 };
 
-// ====================== الكلمات المفتاحية الدقيقة ======================
+
 
 const keywords = {
 
@@ -877,7 +877,7 @@ let currentLanguage = 'ar';
 
 function detectEmotion(text, language) {
 
-  // إذا لم تكن اللغة مدعومة، نستخدم الإنجليزية كافتراضي
+  
 
   if (!responses[language] || !keywords[language]) {
 
@@ -967,7 +967,7 @@ function sendMessage() {
 
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
-  // إظهار مؤشر الكتابة
+
 
   const typingIndicator = document.getElementById('typing-indicator');
 
@@ -975,7 +975,7 @@ function sendMessage() {
 
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
-  // تحديد وقت الانتظار بناءً على طول الرسالة
+  
 
   const typingTime = Math.min(3000, Math.max(1000, userInput.length * 50));
 
@@ -989,25 +989,25 @@ function sendMessage() {
 
     
 
-    // تحديد طول الرد بناءً على طول رسالة المستخدم
+    
 
     let filteredResponses = possibleResponses;
 
     if (userInput.length < 10) {
 
-      // رسالة قصيرة - ردود قصيرة
+      
 
       filteredResponses = possibleResponses.filter(r => r.length < 50);
 
     } else if (userInput.length > 50) {
 
-      // رسالة طويلة - ردود طويلة
+      
 
       filteredResponses = possibleResponses.filter(r => r.length > 70);
 
     } else {
 
-      // رسالة متوسطة - ردود متوسطة
+      
 
       filteredResponses = possibleResponses.filter(r => r.length >= 50 && r.length <= 70);
 
@@ -1015,7 +1015,7 @@ function sendMessage() {
 
     
 
-    // إذا لم نجد ردوداً من الطول المناسب، نستخدم كل الردود المتاحة
+    
 
     if (filteredResponses.length === 0) {
 
@@ -1027,7 +1027,7 @@ function sendMessage() {
 
     const randomResponse = filteredResponses[Math.floor(Math.random() * filteredResponses.length)];
 
-    // إخفاء مؤشر الكتابة
+    
 
     typingIndicator.style.display = 'none';
 
@@ -1105,7 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
 
-      // تحديث نص الزر بناءً على اللغة
+    
 
       const sendButtonText = {
 
